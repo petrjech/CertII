@@ -2,20 +2,27 @@ package chapter1;
 
 public class Enums {
 
-	public static enum simpleEnum {
+	public static enum SimpleEnum {
 		One, Two, Thre;
+		
+		public static void printElements() {
+			SimpleEnum[] values = SimpleEnum.values();
+			for (SimpleEnum value : values) {
+				value.print();
+			}
+		}
 		
 		public void print() {
 			System.out.println("= " + this + " =");
 		}
 	}
 	
-	public static enum fullEnum {
+	public static enum FullEnum {
 		One(true), Two(false), Three(true);
 		
 		private boolean odd;
 		
-		private fullEnum(boolean b) {
+		private FullEnum(boolean b) {
 			odd = b;
 		}
 		
@@ -26,8 +33,10 @@ public class Enums {
 	
 	public static void main(String[] args) {
 		
-		simpleEnum s1 = simpleEnum.One;		
-		fullEnum f1 = fullEnum.One;
+		SimpleEnum.printElements();
+		
+		SimpleEnum s1 = SimpleEnum.One;		
+		FullEnum f1 = FullEnum.One;
 		
 		s1.print();		
 		System.out.println(f1.isOdd());
