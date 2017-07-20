@@ -20,7 +20,7 @@ public class Enums {
 	public static enum FullEnum {
 		One(true), Two(false), Three(true);
 		
-		private boolean odd;
+		public boolean odd;
 		
 		private FullEnum(boolean b) {
 			odd = b;
