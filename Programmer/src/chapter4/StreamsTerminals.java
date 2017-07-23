@@ -28,8 +28,8 @@ public class StreamsTerminals {
 		System.out.println( list1.stream().anyMatch(pred) );
 		System.out.println( list1.stream().noneMatch( s -> s.isEmpty() ) );
 
-		// TODO collect()
-		// TODO reduce() 
+		// collect() - in StreamCollect class
+		// reduce() - in StreamReduce class 
 	}
 
 }

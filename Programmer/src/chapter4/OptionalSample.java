@@ -30,5 +30,12 @@ public class OptionalSample {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+		
+		val1.filter( str -> str.contains("...")).ifPresent( s -> System.out.println("contains three dots"));
+		
+		val1.map( s -> s.length()).ifPresent(System.out::println);
+		
+		val1.flatMap( s -> Optional.of("new value")).ifPresent(System.out::println);
+		
 	}
 }
