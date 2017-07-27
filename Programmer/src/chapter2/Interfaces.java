@@ -4,7 +4,8 @@ public class Interfaces {
 	
 	public interface A {
 		public static int x1 = 10;
-		static int x2 = 20;
+		static int x2 = 20;		
+		int x3 = 5;
 		
 		public void do1();
 		public abstract void do2();
@@ -35,6 +36,6 @@ public class Interfaces {
 	}
 
 	public static void main(String[] args) {		
-
+		System.out.println(A.x3);
 	}
 }

@@ -22,6 +22,7 @@ public class StreamsTerminals {
 		
 		Comparator<String> comp = (s1, s2) -> s1.compareTo(s2);
 		list1.stream().max(comp).ifPresent(System.out::println);
+		list1.stream().min(comp).ifPresent(System.out::println);
 		
 		Predicate<String> pred = s -> s.length() < 4; 
 		System.out.println( list1.stream().allMatch(pred) );
