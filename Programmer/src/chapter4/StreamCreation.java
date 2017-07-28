@@ -8,6 +8,9 @@ import java.util.stream.Stream;
 
 public class StreamCreation {
 	
+	private static String staticString = "static";
+	private String instanceString = "instance";
+	
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
@@ -21,11 +24,15 @@ public class StreamCreation {
 		List<String> list = new ArrayList<>();
 		Stream<String> s3 = list.stream();
 		
-		Supplier<String> supplier = () -> "";
+		Supplier<String> supplier = () -> {staticString += staticString.length(); return staticString;};
 		Stream<String> s4 = Stream.generate(supplier);
+		s4.limit(2).forEach(System.out::print);
 		
+		System.out.println();
+		
+		StreamCreation sc = new StreamCreation();
 		UnaryOperator<String> unary = s -> s + "a";
-		Stream<String> s5 = Stream.iterate("", unary);
-		s5.limit(5).forEach(System.out::print);
+		Stream<String> s5 = Stream.iterate(sc.instanceString, unary);
+		s5.limit(2).forEach(System.out::print);
 	}
 }

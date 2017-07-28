@@ -39,5 +39,4 @@ public class StreamIntermediate {
 		list1.stream().peek( (s) -> System.out.print("*") ).forEach(System.out::print);
 		System.out.println();
 	}
-
 }
