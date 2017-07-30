@@ -33,7 +33,7 @@ public class BufferedReaderWriter {
 
 	public static void main(String[] args) throws IOException {
 		File source = new File("test_dir\\test_file.txt");
-		File destination = new File("temp");
+		File destination = new File("test_dir\\temp");
 		List<String> data = readFile(source);
 		for (String record : data) {
 			System.out.println(record);
